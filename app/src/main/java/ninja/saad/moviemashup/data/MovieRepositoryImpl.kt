@@ -8,7 +8,7 @@ import ninja.saad.moviemashup.util.toReleaseFormat
 import java.util.*
 import javax.inject.Inject
 
-class MovieRepositoryImpl @Inject constructor(var movieAPI: MovieAPI.MovieAPI) : MovieRepository {
+class MovieRepositoryImpl @Inject constructor(var movieAPI: MovieAPI) : MovieRepository {
 
     override fun getMovies(page: Int, date: Date): Observable<MovieResponse> {
         return movieAPI.discover(page = page, date = date.toReleaseFormat())
