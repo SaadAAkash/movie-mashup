@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">MovieMashup</string>
-    <string name="tab_text_1">Tab 1</string>
-    <string name="tab_text_2">Tab 2</string>
+    <string name="tab_1_popular">Popular</string>
+    <string name="tab_2_discover">Discover</string>
+    <string name="tab_3_upcoming">Upcoming</string>
+    <string name="tab_4_now_showing">Now Showing</string>
 </resources>
