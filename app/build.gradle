@@ -1,8 +1,7 @@
 apply plugin: 'com.android.application'
-
 apply plugin: 'kotlin-android'
-
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion 28
@@ -13,6 +12,7 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
     }
     buildTypes {
         release {
@@ -29,7 +29,24 @@ dependencies {
     implementation "androidx.core:core-ktx:$ktxVersion"
     implementation "com.google.android.material:material:$appcompatVersion"
     implementation "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion"
+    // Network
+    implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-jackson:2.3.0"
+    implementation 'com.fasterxml.jackson.core:jackson-core:2.9.0'
+    implementation 'com.fasterxml.jackson.module:jackson-module-kotlin:2.9.0'
+    implementation 'com.facebook.fresco:fresco:1.5.0'
+    // Reactive Extension
+    implementation "io.reactivex.rxjava2:rxandroid:$rxandroidVersion"
+    implementation "io.reactivex.rxjava2:rxjava:$rxjavaVersion"
+    // Dependency Injection
+    implementation "com.google.dagger:dagger:$daggerVersion"
+    kapt "com.google.dagger:dagger-compiler:$daggerVersion"
+    //lifecycle
     implementation "androidx.lifecycle:lifecycle-extensions:$androidxLifecycleVersion"
+    //multidex
+    implementation 'com.android.support:multidex:1.0.3'
+    //test
     testImplementation "junit:junit:$junitVersion"
     androidTestImplementation "androidx.test:runner:$testrunnerVersion"
     androidTestImplementation "androidx.test.espresso:espresso-core:$espressoVersion"
