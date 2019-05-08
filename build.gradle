@@ -32,6 +32,13 @@ buildscript {
         firebaseFirestoreVersion = '18.1.0'
         crashlyticsVersion = '2.9.9'
 
+        //rx
+        rxandroidVersion = '2.1.1'
+        rxjavaVersion = '2.2.6'
+
+        //dagger
+        daggerVersion = '2.20'
+
         threeTenVersion = '1.2.0'
         sdpsspVersion = '1.0.6'
         recyclerViewSelectionVersion = '1.0.0'

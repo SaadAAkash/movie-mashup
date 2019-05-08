@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:bind="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+                name="vm"
+                type="ninja.saad.moviemashup.features.discover.MovieListViewModel"/>
+        <import type="ninja.saad.moviemashup.util.Constant"/>
+    </data>
+    <LinearLayout
+            android:orientation="horizontal"
+            android:clickable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:onClick="@{() -> vm.onClick()}"
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="true">
+
+        <com.facebook.drawee.view.SimpleDraweeView
+                bind:imgName='@{vm.movie.poster == null ? "" : vm.movie.poster}'
+                bind:imgSize='@{"w185"}'
+                bind:placeholderImage="@color/placeholder"
+                android:src="@mipmap/ic_launcher"
+                android:layout_width="100dp"
+                android:layout_height="100dp" />
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_marginLeft="10dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp">
+            <TextView
+                    android:layout_width="match_parent"
+                    android:text="@{vm.movie.title}"
+                    android:textSize="16sp"
+                    android:textColor="@color/primary_text"
+                    android:layout_height="wrap_content" />
+            <RatingBar
+                    android:max="10"
+                    android:numStars="10"
+                    style="?android:ratingBarStyleSmall"
+                    android:rating="@{vm.movie.vote}"
+                    android:layout_width="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_height="wrap_content" />
+            <TextView
+                    android:drawableLeft="@drawable/ic_date"
+                    android:layout_marginTop="5dp"
+                    android:text="@{vm.movie.releaseDate}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_date" />
+        </LinearLayout>
+    </LinearLayout>
+</layout>
