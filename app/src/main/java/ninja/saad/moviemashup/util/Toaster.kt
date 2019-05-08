@@ -1,4 +1,4 @@
-package com.anythingintellect.themoviedb.util
+package ninja.saad.moviemashup.util
 
 interface Toaster {
     fun showLong(msg: String)

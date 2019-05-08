@@ -1,8 +1,8 @@
-package com.anythingintellect.themoviedb.di
+package ninja.saad.moviemashup.di
 
 import android.content.Context
-import com.anythingintellect.themoviedb.util.ToastManager
-import com.anythingintellect.themoviedb.util.Toaster
+import ninja.saad.moviemashup.util.ToastManager
+import ninja.saad.moviemashup.util.Toaster
 import dagger.Module
 import dagger.Provides
 import ninja.saad.moviemashup.data.MovieRepository

@@ -1,5 +1,6 @@
 package ninja.saad.moviemashup.data
 
+import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import ninja.saad.moviemashup.data.model.MovieResponse

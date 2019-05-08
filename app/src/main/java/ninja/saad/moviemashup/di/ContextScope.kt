@@ -1,4 +1,4 @@
-package com.anythingintellect.themoviedb.di
+package ninja.saad.moviemashup.di
 
 import javax.inject.Scope
 

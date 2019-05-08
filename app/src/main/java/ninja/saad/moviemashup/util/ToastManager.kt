@@ -1,4 +1,4 @@
-package com.anythingintellect.themoviedb.util
+package ninja.saad.moviemashup.util
 
 import android.content.Context
 import android.widget.Toast

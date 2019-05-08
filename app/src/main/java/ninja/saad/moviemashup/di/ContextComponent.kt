@@ -1,7 +1,7 @@
-package com.anythingintellect.themoviedb.di
+package ninja.saad.moviemashup.di
 
 import dagger.Subcomponent
-import ninja.saad.moviemashup.MainActivity
+import ninja.saad.moviemashup.features.dashboard.MainActivity
 
 
 @ContextScope

@@ -1,8 +1,8 @@
-package com.anythingintellect.themoviedb.di
+package ninja.saad.moviemashup.di
 
 import android.content.Context
-import com.anythingintellect.themoviedb.util.NavigationManager
-import com.anythingintellect.themoviedb.util.Navigator
+import ninja.saad.moviemashup.util.NavigationManager
+import ninja.saad.moviemashup.util.Navigator
 import dagger.Module
 import dagger.Provides
 

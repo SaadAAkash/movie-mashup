@@ -1,4 +1,4 @@
-package com.anythingintellect.themoviedb.di
+package ninja.saad.moviemashup.di
 
 import dagger.Module
 import dagger.Provides

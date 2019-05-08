@@ -1,4 +1,4 @@
-package com.anythingintellect.themoviedb.util
+package ninja.saad.moviemashup.util
 
 import ninja.saad.moviemashup.data.model.Movie
 

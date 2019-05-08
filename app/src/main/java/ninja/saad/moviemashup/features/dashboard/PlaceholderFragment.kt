@@ -1,4 +1,4 @@
-package ninja.saad.moviemashup.ui.main
+package ninja.saad.moviemashup.features.dashboard
 
 import android.os.Bundle
 import android.view.LayoutInflater
