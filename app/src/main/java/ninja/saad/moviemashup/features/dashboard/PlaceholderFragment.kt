@@ -1,5 +1,6 @@
-package ninja.saad.moviemashup.ui.main
+package ninja.saad.moviemashup.features.dashboard
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,7 +9,9 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import kotlinx.android.synthetic.main.fragment_main.view.*
 import ninja.saad.moviemashup.R
+import ninja.saad.moviemashup.features.discover.DiscoverMoviesActivity
 
 /**
  * A placeholder fragment containing a simple view.
@@ -32,6 +35,11 @@ class PlaceholderFragment : Fragment() {
         val textView: TextView = root.findViewById(R.id.section_label)
         pageViewModel.text.observe(this, Observer<String> {
             textView.text = it
+        })
+        pageViewModel._index.observe(this, Observer<Int> {
+            if (it == 1) {
+                startActivity(Intent(context, DiscoverMoviesActivity::class.java))
+            }
         })
         return root
     }

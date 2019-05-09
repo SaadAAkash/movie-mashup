@@ -6,12 +6,9 @@ import ninja.saad.moviemashup.util.Constant
 import retrofit2.http.GET
 import retrofit2.http.Query
 
-class MovieAPI {
-
-    interface MovieAPI {
+interface MovieAPI {
         @GET("/3/discover/movie")
         fun discover(@Query("release_date.gte") date: String,
                      @Query("page") page: Int,
                      @Query("api_key") apiKey: String = Constant.API_KEY): Observable<MovieResponse>
-    }
 }

@@ -1,4 +1,4 @@
-package ninja.saad.moviemashup.ui.main
+package ninja.saad.moviemashup.features.dashboard
 
 import android.content.Context
 import androidx.fragment.app.Fragment

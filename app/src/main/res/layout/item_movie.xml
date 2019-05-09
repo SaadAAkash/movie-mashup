@@ -4,7 +4,7 @@
     <data>
         <variable
                 name="vm"
-                type="ninja.saad.moviemashup.features.discover.MovieListViewModel"/>
+                type="ninja.saad.moviemashup.features.discover.MovieItemViewModel"/>
         <import type="ninja.saad.moviemashup.util.Constant"/>
     </data>
     <LinearLayout
