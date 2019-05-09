@@ -30,39 +30,36 @@ import javax.inject.Inject
 class MainActivity : AppCompatActivity() {
 
     @Inject
-    lateinit var viewModel: MovieListViewModel
-    @Inject
     lateinit var navigator: Navigator
 
-    //lateinit var appComponent: AppComponent
+    @Inject
+    lateinit var pageViewModel: PageViewModel
+
+    lateinit var appComponent: AppComponent
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         MultiDex.install(this)
-        /*(application as App).appComponent
-            .plusContext(ContextModule(this))
-            .inject(this)*/
-        /*Fresco.initialize(this)
-        initAppComponent()*/
-
-        /*val binding = DataBindingUtil.setContentView<FragmentMainBinding>(this,
-            R.layout.fragment_main)*/
-
         setContentView(R.layout.activity_main)
+
+        (application as App).appComponent
+            .plusContext(ContextModule(this))
+            .inject(this)
+
         val sectionsPagerAdapter =
             SectionsPagerAdapter(this, supportFragmentManager)
         val viewPager: ViewPager = findViewById(R.id.view_pager)
         viewPager.adapter = sectionsPagerAdapter
+
         val tabs: TabLayout = findViewById(R.id.tabs)
         tabs.setupWithViewPager(viewPager)
+
         val fab: FloatingActionButton = findViewById(R.id.fab)
 
         fab.setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show()
         }
-
-        //startActivity(Intent(this, DiscoverMoviesActivity::class.java))
 
        /* binding.vm = viewModel
         viewModel.loadMovies(Date())
@@ -83,14 +80,13 @@ class MainActivity : AppCompatActivity() {
         }*/
     }
 
-   /* private fun initAppComponent() {
+   private fun initAppComponent() {
         this.appComponent = DaggerAppComponent
             .builder()
-            .baseModule(BaseModule(this))
             .networkModule(NetworkModule(Constant.BASE_URL))
             .build()
     }
-
+/*
     private fun setupRV(rvList: RecyclerView) {
         rvList.layoutManager = LinearLayoutManager(this)
         rvList.adapter = MovieListAdapter(viewModel.movies, navigator)

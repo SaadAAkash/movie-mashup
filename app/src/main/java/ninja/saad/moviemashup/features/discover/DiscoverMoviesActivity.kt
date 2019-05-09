@@ -28,9 +28,8 @@ class DiscoverMoviesActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         Fresco.initialize(this)
-        initAppComponent()
-        appComponent.plusContext(ContextModule(this))
-            .inject(this)
+        /*initAppComponent()
+        appComponent.plusContext(ContextModule(this)).inject(this)
         val binding = DataBindingUtil.setContentView<FragmentMainBinding>(
             this,
             R.layout.fragment_main
@@ -38,15 +37,7 @@ class DiscoverMoviesActivity : AppCompatActivity() {
 
         binding.vm = viewModel
         viewModel.loadMovies(Date())
-        setupRV(binding.rvList)
-    }
-
-    private fun initAppComponent() {
-        this.appComponent = DaggerAppComponent
-            .builder()
-            .baseModule(BaseModule(this))
-            .networkModule(NetworkModule(Constant.BASE_URL))
-            .build()
+        setupRV(binding.rvList)*/
     }
 
     private fun setupRV(rvList: RecyclerView) {

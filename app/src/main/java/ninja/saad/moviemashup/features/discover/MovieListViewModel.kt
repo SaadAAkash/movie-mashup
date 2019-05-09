@@ -12,7 +12,7 @@ import ninja.saad.moviemashup.data.model.MovieResponse
 import java.util.*
 import javax.inject.Inject
 
-class MovieListViewModel @Inject constructor(val repository: MovieRepository, val toaster: Toaster): BaseViewModel() {
+class MovieListViewModel @Inject constructor(val repository: MovieRepository): BaseViewModel() {
     val movies = ObservableArrayList<Movie>()
     val showError = ObservableField<Boolean>(false)
     val showLoading = ObservableField<Boolean>(false)
@@ -56,7 +56,7 @@ class MovieListViewModel @Inject constructor(val repository: MovieRepository, va
         if (movies.size == 0) {
             showError.set(true)
         } else {
-            toaster.showLong(R.string.msg_unable_to_load)
+            //toaster.showLong(R.string.msg_unable_to_load)
         }
     }
 

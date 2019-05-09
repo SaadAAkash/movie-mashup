@@ -1,5 +1,7 @@
 package ninja.saad.moviemashup.core
 
-abstract class BaseViewModel {
+import androidx.lifecycle.ViewModel
+
+abstract class BaseViewModel : ViewModel() {
     abstract fun dispose()
 }

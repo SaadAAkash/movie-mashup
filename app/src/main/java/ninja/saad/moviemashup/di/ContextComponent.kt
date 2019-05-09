@@ -1,6 +1,8 @@
 package ninja.saad.moviemashup.di
 
 import dagger.Subcomponent
+import ninja.saad.moviemashup.features.dashboard.MainActivity
+import ninja.saad.moviemashup.features.dashboard.PageViewModel
 import ninja.saad.moviemashup.features.discover.DiscoverMoviesActivity
 
 
@@ -8,6 +10,7 @@ import ninja.saad.moviemashup.features.discover.DiscoverMoviesActivity
 @Subcomponent(modules = arrayOf(ContextModule::class))
 interface ContextComponent {
 
-    fun inject(mainActivity: DiscoverMoviesActivity)
+    fun inject(mainActivity: MainActivity)
+    fun injectPageViewModel(pageViewModel: PageViewModel)
 
 }

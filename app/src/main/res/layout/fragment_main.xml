@@ -4,7 +4,7 @@
     <data>
         <variable
                 name="vm"
-                type="ninja.saad.moviemashup.features.discover.MovieListViewModel"/>
+                type="ninja.saad.moviemashup.features.dashboard.PageViewModel"/>
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -17,7 +17,7 @@
 
         <TextView
                 android:id="@+id/section_label"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 tools:layout_constraintTop_creator="1"
                 android:layout_marginStart="@dimen/activity_horizontal_margin"
@@ -33,7 +33,7 @@
                 android:id="@+id/rvList"
                 android:layout_height="match_parent"/>
 
-        <LinearLayout
+       <!-- <LinearLayout
                 android:layout_width="match_parent"
                 android:orientation="vertical"
                 android:gravity="center"
@@ -68,7 +68,7 @@
                  app:layout_constraintStart_toStartOf="parent"
                  app:layout_constraintEnd_toEndOf="parent"
                  app:layout_constraintTop_toTopOf="parent"
-                 app:layout_constraintBottom_toBottomOf="parent"/>
+                 app:layout_constraintBottom_toBottomOf="parent"/>-->
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

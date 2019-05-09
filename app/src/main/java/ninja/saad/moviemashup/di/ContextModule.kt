@@ -5,6 +5,8 @@ import ninja.saad.moviemashup.util.NavigationManager
 import ninja.saad.moviemashup.util.Navigator
 import dagger.Module
 import dagger.Provides
+import ninja.saad.moviemashup.features.dashboard.PageViewModel
+import ninja.saad.moviemashup.features.dashboard.PageViewModel_Factory
 
 @Module
 class ContextModule(val context: Context) {
