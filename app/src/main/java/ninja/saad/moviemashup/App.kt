@@ -1,6 +1,7 @@
 package ninja.saad.moviemashup
 
 import android.app.Application
+import androidx.multidex.MultiDex
 import ninja.saad.moviemashup.di.AppComponent
 import ninja.saad.moviemashup.di.BaseModule
 import ninja.saad.moviemashup.di.DaggerAppComponent
@@ -14,6 +15,7 @@ class App : Application() {
 
     override fun onCreate() {
         super.onCreate()
+        MultiDex.install(this)
         Fresco.initialize(this)
         initAppComponent()
     }
@@ -23,7 +25,7 @@ class App : Application() {
             .builder()
             .baseModule(BaseModule(this))
             .networkModule(NetworkModule(Constant.BASE_URL))
-            .build();
+            .build()
     }
 
 

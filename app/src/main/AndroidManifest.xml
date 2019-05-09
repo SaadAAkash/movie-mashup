@@ -20,6 +20,9 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <activity android:name=".features.discover.DiscoverMoviesActivity"
+                  android:configChanges="screenSize|orientation">
+        </activity>
         <activity android:name=".features.details.MovieDetailActivity"
                   android:configChanges="screenSize|orientation"
                   android:parentActivityName=".features.details.MovieDetailActivity">
