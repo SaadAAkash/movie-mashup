@@ -26,14 +26,14 @@ interface MovieAPI {
         @Query("page") page: Int,
         @Query("api_key") apiKey: String = Constant.API_KEY,
         @Query("sort_by") sortBy: String,
-        @Query("vote_count.gte") minVoteCount : Number
+        @Query("vote_count.gte") minVoteCount: Number
     ): Observable<MovieResponse>
 
     @GET("/3/discover/movie")
     fun newarrival(
         @Query("page") page: Int,
         @Query("api_key") apiKey: String = Constant.API_KEY,
-        @Query("year") year : Int
+        @Query("year") year: Int
     ): Observable<MovieResponse>
 
 

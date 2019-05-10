@@ -17,15 +17,15 @@ import ninja.saad.moviemashup.util.Navigator
 import java.util.*
 import javax.inject.Inject
 
-class SortedMovieListActivity  : AppCompatActivity() {
+class SortedMovieListActivity : AppCompatActivity() {
     @Inject
     lateinit var viewModel: MovieListViewModel
     @Inject
     lateinit var navigator: Navigator
 
     lateinit var appComponent: AppComponent
-    var sortByType : String? = null
-    var minVotes : Number? = null
+    var sortByType: String? = null
+    var minVotes: Number? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,7 +41,7 @@ class SortedMovieListActivity  : AppCompatActivity() {
         binding.vm = viewModel
         sortByType = intent.extras?.getString("SortBy").toString()
         minVotes = intent.getIntExtra("minVote", 0)
-        sortByType?.let {sortByType ->
+        sortByType?.let { sortByType ->
             minVotes?.let {
                 viewModel.loadMoviesBySortType(Date(), sortByType, it)
                 setupRV(binding.rvList)
@@ -72,7 +72,7 @@ class SortedMovieListActivity  : AppCompatActivity() {
                     .findLastVisibleItemPosition()
                 val totalItem = (rvList.layoutManager as LinearLayoutManager).itemCount
                 if (totalItem - 2 <= lastItem) {
-                    sortByType?.let {sortByType ->
+                    sortByType?.let { sortByType ->
                         minVotes?.let {
                             viewModel.loadMoviesBySortType(Date(), sortByType, it)
                         }
