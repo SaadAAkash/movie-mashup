@@ -6,14 +6,13 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".features.intro.SplashActivity"
-        android:background="@color/colorLightAccent">
+        android:background="@color/white">
 
     <ImageView
             android:id="@+id/logo"
-            android:layout_width="400dp"
-            android:layout_height="400dp"
-            android:padding="100dp"
-            android:src="@drawable/ic_popular"
+            android:layout_width="@dimen/_300sdp"
+            android:layout_height="@dimen/_300sdp"
+            android:src="@drawable/splash"
             app:layout_constraintBottom_toTopOf="@id/textView"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
@@ -23,7 +22,7 @@
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_10sdp"
             android:textStyle="bold"
             android:textColor="@color/colorPrimary"
             android:textSize="@dimen/_30ssp"
