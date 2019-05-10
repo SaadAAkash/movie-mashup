@@ -9,4 +9,5 @@ import com.fasterxml.jackson.annotation.JsonProperty
 data class MovieResponse(
     @JsonProperty("page") val page: Int?,
     @JsonProperty("total_pages") val totalPages: Int?,
-    @JsonProperty("results") val results: List<Movie>?)
+    @JsonProperty("results") val results: List<Movie>?
+)

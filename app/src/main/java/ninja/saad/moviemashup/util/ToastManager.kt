@@ -3,7 +3,7 @@ package ninja.saad.moviemashup.util
 import android.content.Context
 import android.widget.Toast
 
-class ToastManager(val context: Context): Toaster {
+class ToastManager(val context: Context) : Toaster {
     override fun showLong(msg: Int) {
         showLong(context.resources.getString(msg))
     }

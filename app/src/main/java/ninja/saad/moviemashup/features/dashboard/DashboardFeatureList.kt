@@ -2,7 +2,7 @@ package ninja.saad.moviemashup.features.dashboard
 
 import android.content.Context
 import ninja.saad.moviemashup.R
-import java.util.ArrayList
+import java.util.*
 
 object DashboardFeatureList {
 

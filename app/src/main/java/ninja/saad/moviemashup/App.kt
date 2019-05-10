@@ -2,11 +2,11 @@ package ninja.saad.moviemashup
 
 import android.app.Application
 import androidx.multidex.MultiDex
+import com.facebook.drawee.backends.pipeline.Fresco
 import ninja.saad.moviemashup.di.AppComponent
 import ninja.saad.moviemashup.di.BaseModule
 import ninja.saad.moviemashup.di.DaggerAppComponent
 import ninja.saad.moviemashup.di.NetworkModule
-import com.facebook.drawee.backends.pipeline.Fresco
 import ninja.saad.moviemashup.util.Constant
 
 class App : Application() {

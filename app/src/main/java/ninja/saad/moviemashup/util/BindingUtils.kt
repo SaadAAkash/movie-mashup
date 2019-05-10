@@ -1,10 +1,8 @@
 package ninja.saad.moviemashup.util
 
-import android.util.Log
 import android.view.View
 import androidx.databinding.BindingAdapter
 import com.facebook.drawee.view.SimpleDraweeView
-import ninja.saad.moviemashup.util.Constant
 
 
 @BindingAdapter("bind:imgName", "bind:imgSize")

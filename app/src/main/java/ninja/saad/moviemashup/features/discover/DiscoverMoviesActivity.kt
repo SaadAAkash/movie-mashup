@@ -7,7 +7,6 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.facebook.drawee.backends.pipeline.Fresco
-import ninja.saad.moviemashup.App
 import ninja.saad.moviemashup.R
 import ninja.saad.moviemashup.databinding.FragmentMainBinding
 import ninja.saad.moviemashup.di.*

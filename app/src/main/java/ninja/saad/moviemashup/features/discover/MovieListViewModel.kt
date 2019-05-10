@@ -2,17 +2,17 @@ package ninja.saad.moviemashup.features.discover
 
 import androidx.databinding.ObservableArrayList
 import androidx.databinding.ObservableField
-import ninja.saad.moviemashup.util.Toaster
 import io.reactivex.disposables.Disposable
 import ninja.saad.moviemashup.R
 import ninja.saad.moviemashup.core.BaseViewModel
 import ninja.saad.moviemashup.data.MovieRepository
 import ninja.saad.moviemashup.data.model.Movie
 import ninja.saad.moviemashup.data.model.MovieResponse
+import ninja.saad.moviemashup.util.Toaster
 import java.util.*
 import javax.inject.Inject
 
-class MovieListViewModel @Inject constructor(val repository: MovieRepository, val toaster: Toaster): BaseViewModel() {
+class MovieListViewModel @Inject constructor(val repository: MovieRepository, val toaster: Toaster) : BaseViewModel() {
     val movies = ObservableArrayList<Movie>()
     val showError = ObservableField<Boolean>(false)
     val showLoading = ObservableField<Boolean>(false)
@@ -22,7 +22,7 @@ class MovieListViewModel @Inject constructor(val repository: MovieRepository, va
     private var totalPages = -1
 
     // Returns if request was accepted
-    fun loadMovies(selectedDate: Date? = date){
+    fun loadMovies(selectedDate: Date? = date) {
         if (date != selectedDate) {
             // Requested with new date, so start from page 1
             page = 1
@@ -37,20 +37,19 @@ class MovieListViewModel @Inject constructor(val repository: MovieRepository, va
         }
         showLoading.set(true)
         showError.set(false)
-        subscription = repository.getMovies(page, date!!).subscribe({
-                response: MovieResponse ->
+        subscription = repository.getMovies(page, date!!).subscribe({ response: MovieResponse ->
             response.results?.let {
                 movies.addAll(response.results)
                 page = response.page!! + 1
                 totalPages = response.totalPages!!
             }
 
-        },handleError,{
+        }, handleError, {
             showLoading.set(false)
         })
     }
 
-    var handleError = fun (t: Throwable) {
+    var handleError = fun(t: Throwable) {
         t.printStackTrace()
         showLoading.set(false)
         if (movies.size == 0) {

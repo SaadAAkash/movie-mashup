@@ -10,7 +10,8 @@ import ninja.saad.moviemashup.data.model.Movie
 import ninja.saad.moviemashup.databinding.ItemMovieBinding
 import ninja.saad.moviemashup.util.Navigator
 
-class MovieListAdapter(val movies: ObservableList<Movie>, val navigator: Navigator) : RecyclerView.Adapter<MovieListAdapter.MovieItemViewHolder>() {
+class MovieListAdapter(val movies: ObservableList<Movie>, val navigator: Navigator) :
+    RecyclerView.Adapter<MovieListAdapter.MovieItemViewHolder>() {
 
     init {
         movies.addOnListChangedCallback(Listener(this))
@@ -21,24 +22,28 @@ class MovieListAdapter(val movies: ObservableList<Movie>, val navigator: Navigat
     }
 
     override fun getItemCount(): Int {
-        return  movies.size
+        return movies.size
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieItemViewHolder {
         val binding = DataBindingUtil.inflate<ItemMovieBinding>(
             LayoutInflater.from(parent.context),
-            R.layout.item_movie, parent, false)
+            R.layout.item_movie, parent, false
+        )
         return MovieItemViewHolder(binding)
     }
 
 
-    class Listener(val adapter: MovieListAdapter): ObservableList.OnListChangedCallback<ObservableList<Movie>>() {
+    class Listener(val adapter: MovieListAdapter) : ObservableList.OnListChangedCallback<ObservableList<Movie>>() {
 
-        override fun onItemRangeRemoved(p0: ObservableList<Movie>?, p1: Int, p2: Int) = adapter.notifyItemRangeRemoved(p1, p2)
+        override fun onItemRangeRemoved(p0: ObservableList<Movie>?, p1: Int, p2: Int) =
+            adapter.notifyItemRangeRemoved(p1, p2)
 
-        override fun onItemRangeInserted(p0: ObservableList<Movie>?, p1: Int, p2: Int) = adapter.notifyItemRangeInserted(p1, p2)
+        override fun onItemRangeInserted(p0: ObservableList<Movie>?, p1: Int, p2: Int) =
+            adapter.notifyItemRangeInserted(p1, p2)
 
-        override fun onItemRangeChanged(p0: ObservableList<Movie>?, p1: Int, p2: Int) = adapter.notifyItemRangeChanged(p1, p2)
+        override fun onItemRangeChanged(p0: ObservableList<Movie>?, p1: Int, p2: Int) =
+            adapter.notifyItemRangeChanged(p1, p2)
 
         override fun onItemRangeMoved(p0: ObservableList<Movie>?, p1: Int, p2: Int, p3: Int) {}
 

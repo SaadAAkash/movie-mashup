@@ -19,12 +19,15 @@ class NetworkModule(val baseUrl: String) {
 
     @Provides
     @Singleton
-    fun providesRetrofit(adapterFactory: RxJava2CallAdapterFactory, converterFactory: JacksonConverterFactory): Retrofit {
-        val builder: Retrofit.Builder = Retrofit.Builder();
+    fun providesRetrofit(
+        adapterFactory: RxJava2CallAdapterFactory,
+        converterFactory: JacksonConverterFactory
+    ): Retrofit {
+        val builder: Retrofit.Builder = Retrofit.Builder()
         builder.baseUrl(baseUrl)
-                .addCallAdapterFactory(adapterFactory)
-                .addConverterFactory(converterFactory)
-        return builder.build();
+            .addCallAdapterFactory(adapterFactory)
+            .addConverterFactory(converterFactory)
+        return builder.build()
     }
 
     @Provides

@@ -1,44 +1,18 @@
 package ninja.saad.moviemashup.features.dashboard
 
 import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
-import android.os.Handler
-import android.view.MenuItem
 import android.view.WindowManager
-import android.widget.Button
-import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AlertDialog
-import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
-import androidx.databinding.DataBindingUtil
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.multidex.MultiDex
-import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import androidx.viewpager.widget.ViewPager
-import com.facebook.common.activitylistener.BaseActivityListener
-import com.facebook.drawee.backends.pipeline.Fresco
-import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.android.material.navigation.NavigationView
-import com.google.android.material.snackbar.Snackbar
-import com.google.android.material.tabs.TabLayout
-import ninja.saad.moviemashup.di.*
-import ninja.saad.moviemashup.util.Navigator
-import kotlinx.android.synthetic.main.activity_main.*
-import ninja.saad.moviemashup.App
 import ninja.saad.moviemashup.R
 import ninja.saad.moviemashup.core.BaseActivity
-import ninja.saad.moviemashup.databinding.FragmentMainBinding
 import ninja.saad.moviemashup.features.discover.DiscoverMoviesActivity
-import ninja.saad.moviemashup.features.discover.MovieListAdapter
-import ninja.saad.moviemashup.features.discover.MovieListViewModel
-import ninja.saad.moviemashup.util.Constant
-import java.util.*
-import javax.inject.Inject
 
 class MainActivity : BaseActivity(), GridRecyclerAdapter.RecyclerAdapterOnClickHandler {
 
@@ -49,11 +23,13 @@ class MainActivity : BaseActivity(), GridRecyclerAdapter.RecyclerAdapterOnClickH
         setContentView(R.layout.activity_main)
         window.setFlags(
             WindowManager.LayoutParams.FLAG_HARDWARE_ACCELERATED,
-            WindowManager.LayoutParams.FLAG_HARDWARE_ACCELERATED)
+            WindowManager.LayoutParams.FLAG_HARDWARE_ACCELERATED
+        )
         initViews()
         //setuptabs()
 
     }
+
     private fun initViews() {
 
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
@@ -80,7 +56,7 @@ class MainActivity : BaseActivity(), GridRecyclerAdapter.RecyclerAdapterOnClickH
             i.setClass(this@MainActivity, DiscoverMoviesActivity::class.java)
             startActivity(i)
         } else if (target === applicationContext.resources.getString(R.string.feature03)) {
-            i.setClass(this@MainActivity,DiscoverMoviesActivity::class.java)
+            i.setClass(this@MainActivity, DiscoverMoviesActivity::class.java)
             startActivity(i)
         } else if (target === applicationContext.resources.getString(R.string.feature04)) {
             i.setClass(this@MainActivity, DiscoverMoviesActivity::class.java)
@@ -112,8 +88,7 @@ class MainActivity : BaseActivity(), GridRecyclerAdapter.RecyclerAdapterOnClickH
         }
     }
 
-    private fun setuptabs()
-    {
+    private fun setuptabs() {
         /*val sectionsPagerAdapter =
             SectionsPagerAdapter(this, supportFragmentManager)
         val viewPager: ViewPager = findViewById(R.id.view_pager)

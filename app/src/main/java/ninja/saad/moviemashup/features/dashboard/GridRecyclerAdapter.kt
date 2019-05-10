@@ -9,7 +9,8 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import ninja.saad.moviemashup.R
 
-class GridRecyclerAdapter(private val mClickHandler: RecyclerAdapterOnClickHandler, private val data: List<String>) : RecyclerView.Adapter<GridRecyclerAdapter.GridRecyclerViewHolder>() {
+class GridRecyclerAdapter(private val mClickHandler: RecyclerAdapterOnClickHandler, private val data: List<String>) :
+    RecyclerView.Adapter<GridRecyclerAdapter.GridRecyclerViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GridRecyclerViewHolder {
         val context = parent.context

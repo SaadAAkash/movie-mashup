@@ -2,18 +2,13 @@ package ninja.saad.moviemashup.core
 
 
 import android.app.ProgressDialog
-import android.content.ActivityNotFoundException
 import android.content.Context
-import android.content.Intent
-import android.location.LocationManager
 import android.net.ConnectivityManager
-import android.provider.Settings
 import android.widget.Toast
-
-import java.text.SimpleDateFormat
-import java.util.Date
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import java.text.SimpleDateFormat
+import java.util.*
 
 open class BaseActivity : AppCompatActivity() {
 

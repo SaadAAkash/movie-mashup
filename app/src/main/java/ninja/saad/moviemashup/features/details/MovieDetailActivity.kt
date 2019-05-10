@@ -10,16 +10,17 @@ import ninja.saad.moviemashup.databinding.ActivityMovieDetailBinding
 class MovieDetailActivity : AppCompatActivity() {
 
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val movie = Builder.getMovie(intent.extras)
         // Not using ViewModel, as this screen is not supposed to have any behaviour
         val binding = DataBindingUtil
-            .setContentView<ActivityMovieDetailBinding>(this,
-                R.layout.activity_movie_detail)
+            .setContentView<ActivityMovieDetailBinding>(
+                this,
+                R.layout.activity_movie_detail
+            )
         binding.movie = movie
-        setTitle(movie.title)
+        title = movie.title
 
     }
 
@@ -39,9 +40,11 @@ class MovieDetailActivity : AppCompatActivity() {
         }
 
         fun getMovie(bundle: Bundle): Movie {
-            return Movie(0, bundle.getString(KEY_TITLE),
+            return Movie(
+                0, bundle.getString(KEY_TITLE),
                 bundle.getString(KEY_OVERVIEW), bundle.getFloat(KEY_RATING),
-                "", bundle.getString(KEY_POSTER), "")
+                "", bundle.getString(KEY_POSTER), ""
+            )
         }
     }
 }
