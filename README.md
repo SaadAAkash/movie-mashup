@@ -105,9 +105,7 @@ Head over to ```Releases``` in the repo and download the apk file from the lates
 
 ## App Screenshots
 
-![MovieMashup App](https://github.com/SaadAAkash/MovieMashup/blob/master/Resources/Screenshots/1.png "MovieMashup") ![MovieMashup App](https://github.com/SaadAAkash/MovieMashup/blob/master/Resources/Screenshots/2.png "MovieMashup")
-![MovieMashup App](https://github.com/SaadAAkash/MovieMashup/blob/master/Resources/Screenshots/3.png "MovieMashup") ![MovieMashup App](https://github.com/SaadAAkash/MovieMashup/blob/master/Resources/Screenshots/4.png "MovieMashup")
-![MovieMashup App](https://github.com/SaadAAkash/MovieMashup/blob/master/Resources/Screenshots/5.png "MovieMashup") ![MovieMashup App](https://github.com/SaadAAkash/MovieMashup/blob/master/Resources/Screenshots/6.png "MovieMashup") ![MovieMashup App](https://github.com/SaadAAkash/MovieMashup/blob/master/Resources/Screenshots/7.png "MovieMashup")
+<img src="https://github.com/SaadAAkash/MovieMashup/blob/master/Resources/Screenshots/1.png" height="400" width="200"> <img src="https://github.com/SaadAAkash/MovieMashup/blob/master/Resources/Screenshots/2.png" height="400" width="200"> <img src="https://github.com/SaadAAkash/MovieMashup/blob/master/Resources/Screenshots/3.png" height="400" width="200"> <img src="https://github.com/SaadAAkash/MovieMashup/blob/master/Resources/Screenshots/4.png" height="400" width="200"> <img src="https://github.com/SaadAAkash/MovieMashup/blob/master/Resources/Screenshots/5.png" height="400" width="200"> <img src="https://github.com/SaadAAkash/MovieMashup/blob/master/Resources/Screenshots/6.png" height="400" width="200"> <img src="https://github.com/SaadAAkash/MovieMashup/blob/master/Resources/Screenshots/7.png" height="400" width="200"> <img src="https://github.com/SaadAAkash/MovieMashup/blob/master/Resources/Screenshots/8.png" height="400" width="200">
 
 ## Contributing
 
