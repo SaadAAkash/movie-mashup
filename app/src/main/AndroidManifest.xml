@@ -28,6 +28,11 @@
                 android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity android:name=".features.discover.DiscoverMoviesActivity"
+                  android:label="Discover Movies"
+                  android:configChanges="screenSize|orientation">
+        </activity>
+        <activity android:name=".features.trending.TrendingMoviesActivity"
+                  android:label="Trending Movies"
                   android:configChanges="screenSize|orientation">
         </activity>
         <activity android:name=".features.details.MovieDetailActivity"

@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 import ninja.saad.moviemashup.R
 import ninja.saad.moviemashup.core.BaseActivity
 import ninja.saad.moviemashup.features.discover.DiscoverMoviesActivity
+import ninja.saad.moviemashup.features.trending.TrendingMoviesActivity
 
 class MainActivity : BaseActivity(), GridRecyclerAdapter.RecyclerAdapterOnClickHandler {
 
@@ -59,7 +60,7 @@ class MainActivity : BaseActivity(), GridRecyclerAdapter.RecyclerAdapterOnClickH
             i.setClass(this@MainActivity, DiscoverMoviesActivity::class.java)
             startActivity(i)
         } else if (target === applicationContext.resources.getString(R.string.feature04)) {
-            i.setClass(this@MainActivity, DiscoverMoviesActivity::class.java)
+            i.setClass(this@MainActivity, TrendingMoviesActivity::class.java)
             startActivity(i)
         } else if (target === applicationContext.resources.getString(R.string.feature05)) {
             showLongToast("To be implemented")

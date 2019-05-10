@@ -13,4 +13,11 @@ interface MovieAPI {
         @Query("page") page: Int,
         @Query("api_key") apiKey: String = Constant.API_KEY
     ): Observable<MovieResponse>
+
+    @GET("/3/trending/movie/day")
+    fun trending(
+        @Query("media_type") mediaType: String,
+        @Query("time_window") timeWindow: String,
+        @Query("api_key") apiKey: String = Constant.API_KEY
+    ): Observable<MovieResponse>
 }

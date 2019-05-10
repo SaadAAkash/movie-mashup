@@ -49,6 +49,33 @@ class MovieListViewModel @Inject constructor(val repository: MovieRepository, va
         })
     }
 
+    fun loadTrending(selectedDate: Date? = date) {
+        if (date != selectedDate) {
+            // Requested with new date, so start from page 1
+            page = 1
+            totalPages = -1
+            movies.clear()
+            subscription?.dispose()
+            showLoading.set(false)
+            this.date = selectedDate
+        }
+        if (showLoading.get()!! || totalPages == page) {
+            return
+        }
+        showLoading.set(true)
+        showError.set(false)
+        subscription = repository.getTrending("movie", "day").subscribe({ response: MovieResponse ->
+            response.results?.let {
+                movies.addAll(response.results)
+                page = response.page!! + 1
+                totalPages = response.totalPages!!
+            }
+
+        }, handleError, {
+            showLoading.set(false)
+        })
+    }
+
     var handleError = fun(t: Throwable) {
         t.printStackTrace()
         showLoading.set(false)
