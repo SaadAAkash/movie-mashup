@@ -103,6 +103,19 @@ This project uses the Gradle build system. To build this project, use the `gradl
 
 Head over to ```Releases``` in the repo and download the apk file from the latest release.
 
+## App Screenshots
+
+![MovieMashup App](https://github.com/SaadAAkash/MovieMashup/blob/master/Resources
+/Screenshots/1.png "MovieMashup") ![MovieMashup App](https://github.com/SaadAAkash/MovieMashup/blob/master/Resources
+/Screenshots/2.png "MovieMashup")
+![MovieMashup App](https://github.com/SaadAAkash/MovieMashup/blob/master/Resources
+/Screenshots/3.png "MovieMashup") ![MovieMashup App](https://github.com/SaadAAkash/MovieMashup/blob/master/Resources
+/Screenshots/4.png "MovieMashup")
+![MovieMashup App](https://github.com/SaadAAkash/MovieMashup/blob/master/Resources
+/Screenshots/5.png "MovieMashup") ![MovieMashup App](https://github.com/SaadAAkash/MovieMashup/blob/master/Resources
+/Screenshots/6.png "MovieMashup") ![MovieMashup App](https://github.com/SaadAAkash/MovieMashup/blob/master/Resources
+/Screenshots/7.png "MovieMashup")
+
 ## Contributing
 
 ### Directory Structure
