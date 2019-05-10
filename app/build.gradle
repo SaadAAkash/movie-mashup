@@ -49,6 +49,9 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-extensions:$androidxLifecycleVersion"
     //multidex
     implementation 'com.android.support:multidex:1.0.3'
+    //scalable size unit
+    implementation "com.intuit.sdp:sdp-android:$sdpsspVersion"
+    implementation "com.intuit.ssp:ssp-android:$sdpsspVersion"
     //test
     testImplementation "junit:junit:$junitVersion"
     androidTestImplementation "androidx.test:runner:$testrunnerVersion"

@@ -7,10 +7,12 @@ import androidx.fragment.app.FragmentPagerAdapter
 import ninja.saad.moviemashup.R
 
 private val TAB_TITLES = arrayOf(
-    R.string.tab_1_discover,
-    R.string.tab_2_popular,
-    R.string.tab_3_upcoming,
-    R.string.tab_4_now_showing
+    R.string.feature01,
+    R.string.feature02,
+    R.string.feature03,
+    R.string.feature04,
+    R.string.feature05,
+    R.string.feature06
 )
 
 /**
@@ -30,7 +32,6 @@ class SectionsPagerAdapter(private val context: Context, fm: FragmentManager) : 
     }
 
     override fun getCount(): Int {
-        // Show 4 pages
-        return 4
+        return 6
     }
 }

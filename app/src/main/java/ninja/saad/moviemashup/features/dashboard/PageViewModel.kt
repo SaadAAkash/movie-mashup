@@ -9,7 +9,7 @@ class PageViewModel : ViewModel() {
 
     val _index = MutableLiveData<Int>()
     val text: LiveData<String> = Transformations.map(_index) {
-        "Hello world from section: $it"
+        "Section: $it"
     }
 
     fun setIndex(index: Int) {

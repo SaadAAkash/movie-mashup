@@ -4,7 +4,7 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:fresco="http://schemas.android.com/apk/res-auto"
         xmlns:bind="http://schemas.android.com/apk/res-auto"
-        tools:context="com.anythingintellect.themoviedb.view.MovieDetailActivity">
+        tools:context="ninja.saad.moviemashup.features.details.MovieDetailActivity">
 
     <data>
         <variable
@@ -20,8 +20,7 @@
         <com.google.android.material.appbar.AppBarLayout
                 android:layout_width="match_parent"
                 android:background="@android:color/white"
-                android:layout_height="400dp">
-            <!--app:collapsedTitleTextAppearance="@style/Base.TextAppearance.ProductTitleCollapsed"-->
+                android:layout_height="@dimen/_300sdp">
             <com.google.android.material.appbar.CollapsingToolbarLayout
                     android:fitsSystemWindows="true"
                     app:contentScrim="@color/colorPrimary"
@@ -47,13 +46,14 @@
 
             <LinearLayout
                     android:orientation="vertical"
-                    android:padding="15dp"
+                    android:padding="@dimen/_10sdp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                 <TextView
                         android:layout_width="match_parent"
-                        android:layout_marginTop="5dp"
-                        android:textSize="14sp"
+                        android:layout_margin="@dimen/_8sdp"
+                        android:textSize="@dimen/_18ssp"
+                        android:fontFamily="@font/titilliumwebbold"
                         android:textColor="@color/secondary_text"
                         android:text="@{movie.overview}"
                         android:layout_height="wrap_content" />
