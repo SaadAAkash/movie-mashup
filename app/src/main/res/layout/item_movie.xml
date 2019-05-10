@@ -11,7 +11,9 @@
     <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/_6sdp">
+            android:layout_margin="@dimen/_6sdp"
+
+    >
 
     <androidx.constraintlayout.widget.ConstraintLayout
             android:clickable="true"
@@ -20,6 +22,7 @@
             android:padding="@dimen/_6sdp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/colorAccent"
             android:focusable="true">
 
         <com.facebook.drawee.view.SimpleDraweeView
