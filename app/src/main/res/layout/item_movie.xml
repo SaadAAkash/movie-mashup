@@ -10,10 +10,8 @@
     </data>
     <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/_6sdp"
-
-    >
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/_6sdp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
                 android:clickable="true"
@@ -21,18 +19,18 @@
                 android:onClick="@{() -> vm.onClick()}"
                 android:padding="@dimen/_6sdp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:background="@color/colorAccent"
                 android:focusable="true">
 
             <com.facebook.drawee.view.SimpleDraweeView
                     android:id="@+id/movieImage"
                     bind:imgName='@{vm.movie.poster == null ? "" : vm.movie.poster}'
-                    bind:imgSize='@{"w185"}'
+                    bind:imgSize='@{"w780"}'
                     bind:placeholderImage="@color/placeholder"
                     android:src="@mipmap/ic_launcher"
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/_200sdp"/>
+                    android:layout_height="match_parent"/>
 
             <LinearLayout
                     android:layout_width="match_parent"
@@ -41,8 +39,7 @@
                     android:paddingEnd="@dimen/_10sdp"
                     android:gravity="end|bottom"
                     android:background="@color/text_light_gray"
-
-                    bind:layout_constraintTop_toBottomOf="@+id/movieImage"
+                    bind:layout_constraintBottom_toBottomOf="parent"
             >
                 <TextView
                         android:layout_width="wrap_content"
@@ -53,18 +50,6 @@
                         android:textStyle="bold"
                         android:textAllCaps="true"
                         android:textColor="@color/colorPrimary"
-                        android:layout_height="wrap_content"/>
-                <RatingBar
-                        android:max="10"
-                        android:numStars="10"
-                        style="?android:ratingBarStyleSmall"
-                        android:rating="@{vm.movie.vote}"
-                        android:layout_width="wrap_content"
-                        android:textSize="@dimen/_12sdp"
-                        android:textColor="@color/colorPrimary"
-                        android:layout_marginTop="@dimen/_5sdp"
-                        android:layout_marginBottom="@dimen/_5sdp"
-                        android:fontFamily="@font/titilliumwebbold"
                         android:layout_height="wrap_content"/>
                 <TextView
                         android:drawableLeft="@drawable/ic_calendar"
@@ -79,6 +64,18 @@
                         android:fontFamily="@font/titilliumwebbold"
                         android:textColor="@color/colorPrimary"
                         android:drawableStart="@drawable/ic_calendar"/>
+                <RatingBar
+                        android:max="10"
+                        android:numStars="10"
+                        style="?android:ratingBarStyleSmall"
+                        android:rating="@{vm.movie.vote}"
+                        android:layout_width="wrap_content"
+                        android:textSize="@dimen/_12sdp"
+                        android:textColor="@color/colorPrimary"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        android:fontFamily="@font/titilliumwebbold"
+                        android:layout_height="wrap_content"/>
             </LinearLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
