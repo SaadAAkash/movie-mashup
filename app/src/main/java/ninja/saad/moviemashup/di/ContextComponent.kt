@@ -2,6 +2,7 @@ package ninja.saad.moviemashup.di
 
 import dagger.Subcomponent
 import ninja.saad.moviemashup.features.discover.DiscoverMoviesActivity
+import ninja.saad.moviemashup.features.newarrival.NewArrival
 import ninja.saad.moviemashup.features.popularandtoprated.SortedMovieListActivity
 import ninja.saad.moviemashup.features.trending.TrendingMoviesActivity
 
@@ -13,5 +14,6 @@ interface ContextComponent {
     fun inject(mainActivity: DiscoverMoviesActivity)
     fun injectTrendingActivity(trendingMoviesActivity: TrendingMoviesActivity)
     fun injectPopularActivity(popularActivity: SortedMovieListActivity)
+    fun injectNewArrivalActivity(newArrival: NewArrival)
 
 }

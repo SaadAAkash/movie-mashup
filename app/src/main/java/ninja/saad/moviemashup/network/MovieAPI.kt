@@ -9,7 +9,7 @@ import retrofit2.http.Query
 interface MovieAPI {
     @GET("/3/discover/movie")
     fun discover(
-        @Query("release_date.lte") date: String,
+        @Query("release_date.gte") date: String,
         @Query("page") page: Int,
         @Query("api_key") apiKey: String = Constant.API_KEY
     ): Observable<MovieResponse>
@@ -23,12 +23,18 @@ interface MovieAPI {
 
     @GET("/3/discover/movie")
     fun sortedlist(
-        @Query("release_date.gte") date: String,
         @Query("page") page: Int,
         @Query("api_key") apiKey: String = Constant.API_KEY,
         @Query("sort_by") sortBy: String,
         @Query("vote_count.gte") minVoteCount : Number
     ): Observable<MovieResponse>
-    
+
+    @GET("/3/discover/movie")
+    fun newarrival(
+        @Query("page") page: Int,
+        @Query("api_key") apiKey: String = Constant.API_KEY,
+        @Query("year") year : Int
+    ): Observable<MovieResponse>
+
 
 }
