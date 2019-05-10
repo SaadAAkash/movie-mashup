@@ -1,41 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:bind="http://schemas.android.com/apk/res-auto">
+        xmlns:bind="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
     <data>
         <variable
                 name="vm"
                 type="ninja.saad.moviemashup.features.discover.MovieItemViewModel"/>
         <import type="ninja.saad.moviemashup.util.Constant"/>
     </data>
-    <LinearLayout
-            android:orientation="horizontal"
+    <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_6sdp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
             android:clickable="true"
             android:foreground="?android:attr/selectableItemBackground"
             android:onClick="@{() -> vm.onClick()}"
-            android:padding="10dp"
+            android:padding="@dimen/_6sdp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:focusable="true">
 
         <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/movieImage"
                 bind:imgName='@{vm.movie.poster == null ? "" : vm.movie.poster}'
                 bind:imgSize='@{"w185"}'
                 bind:placeholderImage="@color/placeholder"
                 android:src="@mipmap/ic_launcher"
-                android:layout_width="100dp"
-                android:layout_height="100dp" />
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_200sdp" />
 
         <LinearLayout
                 android:layout_width="match_parent"
                 android:orientation="vertical"
-                android:layout_marginLeft="10dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp">
+                android:paddingEnd="@dimen/_10sdp"
+                android:gravity="end|bottom"
+                android:background="@color/text_light_gray"
+
+                bind:layout_constraintTop_toBottomOf="@+id/movieImage"
+                >
             <TextView
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:text="@{vm.movie.title}"
-                    android:textSize="16sp"
-                    android:textColor="@color/primary_text"
+                    tools:text="Avengers EndGame"
+                    android:fontFamily="@font/titilliumwebbold"
+                    android:textSize="@dimen/_16ssp"
+                    android:textStyle="bold"
+                    android:textAllCaps="true"
+                    android:textColor="@color/colorPrimary"
                     android:layout_height="wrap_content" />
             <RatingBar
                     android:max="10"
@@ -43,15 +57,26 @@
                     style="?android:ratingBarStyleSmall"
                     android:rating="@{vm.movie.vote}"
                     android:layout_width="wrap_content"
-                    android:layout_marginTop="5dp"
+                    android:textSize="@dimen/_12sdp"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:fontFamily="@font/titilliumwebbold"
                     android:layout_height="wrap_content" />
             <TextView
-                    android:drawableLeft="@drawable/ic_date"
-                    android:layout_marginTop="5dp"
+                    android:drawableLeft="@drawable/ic_calendar"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginBottom="@dimen/_5sdp"
                     android:text="@{vm.movie.releaseDate}"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:drawableStart="@drawable/ic_date" />
+                    android:textSize="@dimen/_16ssp"
+                    android:textStyle="bold"
+                    android:textAllCaps="true"
+                    android:fontFamily="@font/titilliumwebbold"
+                    android:textColor="@color/colorPrimary"
+                    android:drawableStart="@drawable/ic_calendar" />
         </LinearLayout>
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
 </layout>

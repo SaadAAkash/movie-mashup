@@ -13,7 +13,7 @@
             android:layout_width="400dp"
             android:layout_height="400dp"
             android:padding="100dp"
-            android:src="@drawable/ic_trending"
+            android:src="@drawable/ic_popular"
             app:layout_constraintBottom_toTopOf="@id/textView"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
