@@ -6,11 +6,18 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+        <item name="android:fontFamily">@font/titilliumwebregular</item>
+        <item name="fontFamily">@font/titilliumwebregular</item>
+        <!-- fills the topmost status bar of device with charge status above the toolbar-->
+        <item name="android:statusBarColor">@color/colorPrimaryDark</item>
     </style>
 
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+        <!-- fills the topmost status bar of device with charge status above the toolbar-->
+        <item name="android:statusBarColor">@color/colorPrimaryDark</item>
     </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>

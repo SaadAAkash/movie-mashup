@@ -35,6 +35,14 @@
                   android:label="Trending Movies"
                   android:configChanges="screenSize|orientation">
         </activity>
+        <activity android:name=".features.popularandtoprated.SortedMovieListActivity"
+                  android:label="Movies of Your Choice"
+                  android:configChanges="screenSize|orientation">
+        </activity>
+        <activity android:name=".features.newarrival.NewArrival"
+                  android:label="Upcoming Movies"
+                  android:configChanges="screenSize|orientation">
+        </activity>
         <activity android:name=".features.details.MovieDetailActivity"
                   android:configChanges="screenSize|orientation"
                   android:parentActivityName=".features.details.MovieDetailActivity">

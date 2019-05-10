@@ -23,4 +23,15 @@ class MovieRepositoryImpl @Inject constructor(var movieAPI: MovieAPI) : MovieRep
             .observeOn(AndroidSchedulers.mainThread())
     }
 
+    override fun getSorted(page: Int, date: Date, sortBy: String, minVoteCount: Number): Observable<MovieResponse> {
+        return movieAPI.sortedlist(page = page, sortBy = sortBy, minVoteCount = minVoteCount)
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+    }
+
+    override fun getNewArrival(page: Int, year: Int) : Observable<MovieResponse> {
+        return movieAPI.newarrival(page = page, year = year)
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+    }
 }

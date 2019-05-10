@@ -1,15 +1,13 @@
-package ninja.saad.moviemashup.features.trending
+package ninja.saad.moviemashup.features.popularandtoprated
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import androidx.databinding.ObservableList
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.facebook.drawee.backends.pipeline.Fresco
 import ninja.saad.moviemashup.R
-import ninja.saad.moviemashup.data.model.Movie
 import ninja.saad.moviemashup.databinding.FragmentMainBinding
 import ninja.saad.moviemashup.di.*
 import ninja.saad.moviemashup.features.discover.MovieListAdapter
@@ -19,29 +17,36 @@ import ninja.saad.moviemashup.util.Navigator
 import java.util.*
 import javax.inject.Inject
 
-class TrendingMoviesActivity : AppCompatActivity() {
-
+class SortedMovieListActivity : AppCompatActivity() {
     @Inject
     lateinit var viewModel: MovieListViewModel
     @Inject
     lateinit var navigator: Navigator
 
     lateinit var appComponent: AppComponent
+    var sortByType: String? = null
+    var minVotes: Number? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         Fresco.initialize(this)
         initAppComponent()
         appComponent.plusContext(ContextModule(this))
-            .injectTrendingActivity(this)
+            .injectPopularActivity(this)
         val binding = DataBindingUtil.setContentView<FragmentMainBinding>(
             this,
             R.layout.fragment_main
         )
 
         binding.vm = viewModel
-        viewModel.loadTrending(Date())
-        setupRV(binding.rvList)
+        sortByType = intent.extras?.getString("SortBy").toString()
+        minVotes = intent.getIntExtra("minVote", 0)
+        sortByType?.let { sortByType ->
+            minVotes?.let {
+                viewModel.loadMoviesBySortType(Date(), sortByType, it)
+                setupRV(binding.rvList)
+            }
+        }
     }
 
     private fun initAppComponent() {
@@ -54,7 +59,7 @@ class TrendingMoviesActivity : AppCompatActivity() {
 
     private fun setupRV(rvList: RecyclerView) {
         rvList.layoutManager = LinearLayoutManager(this)
-        rvList.adapter = MovieListAdapter(viewModel.movies as ObservableList<Movie>, navigator)
+        rvList.adapter = MovieListAdapter(viewModel.movies, navigator)
         rvList.addItemDecoration(
             DividerItemDecoration(
                 this,
@@ -67,7 +72,13 @@ class TrendingMoviesActivity : AppCompatActivity() {
                     .findLastVisibleItemPosition()
                 val totalItem = (rvList.layoutManager as LinearLayoutManager).itemCount
                 if (totalItem - 2 <= lastItem) {
-                    viewModel.loadTrending()
+                    sortByType?.let { sortByType ->
+                        minVotes?.let {
+                            viewModel.loadMoviesBySortType(Date(), sortByType, it)
+                        }
+
+                    }
+
                 }
             }
         })

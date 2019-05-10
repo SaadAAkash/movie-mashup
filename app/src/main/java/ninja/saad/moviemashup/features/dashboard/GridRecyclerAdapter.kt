@@ -26,11 +26,11 @@ class GridRecyclerAdapter(private val mClickHandler: RecyclerAdapterOnClickHandl
         var id = context.resources.getIdentifier(info.toLowerCase(), "drawable", context.packageName)
         when (position) {
             0 -> id = context.resources.getIdentifier("ic_discover", "drawable", context.packageName)
-            1 -> id = context.resources.getIdentifier("ic_popular", "drawable", context.packageName)
-            2 -> id = context.resources.getIdentifier("ic_upcoming", "drawable", context.packageName)
-            3 -> id = context.resources.getIdentifier("ic_trending", "drawable", context.packageName)
+            1 -> id = context.resources.getIdentifier("ic_trending", "drawable", context.packageName)
+            2 -> id = context.resources.getIdentifier("ic_popular", "drawable", context.packageName)
+            3 -> id = context.resources.getIdentifier("ic_top_rated", "drawable", context.packageName)
             4 -> id = context.resources.getIdentifier("ic_now_playing", "drawable", context.packageName)
-            5 -> id = context.resources.getIdentifier("ic_top_rated", "drawable", context.packageName)
+            5 -> id = context.resources.getIdentifier("ic_upcoming", "drawable", context.packageName)
         }
         holder.mainImageView.setImageResource(id)
         holder.name.text = info
