@@ -6,11 +6,11 @@
     <string name="msg_unable_to_load">Unable to load more!</string>
     <!--dashboard feature headings-->
     <string name="feature01">Discover</string>
-    <string name="feature02">Popular</string>
-    <string name="feature03">Upcoming</string>
-    <string name="feature04">Trending</string>
+    <string name="feature02">Trending</string>
+    <string name="feature03">Popular</string>
+    <string name="feature04">Top Rated</string>
     <string name="feature05">Now Playing</string>
-    <string name="feature06">Top Rated</string>
+    <string name="feature06">New Arrival</string>
     <!--headers and titles-->
     <string name="app_title">Movie Mashup</string>
     <string name="movie_details">Movie Details</string>

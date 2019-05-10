@@ -13,10 +13,15 @@ import androidx.recyclerview.widget.RecyclerView
 import ninja.saad.moviemashup.R
 import ninja.saad.moviemashup.core.BaseActivity
 import ninja.saad.moviemashup.features.discover.DiscoverMoviesActivity
+import ninja.saad.moviemashup.features.popularandtoprated.SortedMovieListActivity
 import ninja.saad.moviemashup.features.trending.TrendingMoviesActivity
 
 class MainActivity : BaseActivity(), GridRecyclerAdapter.RecyclerAdapterOnClickHandler {
 
+    companion object {
+        private val POPULARITY = "popularity.desc"
+        private val TOP_RATED = "vote_average.desc"
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         MultiDex.install(this)
@@ -42,7 +47,7 @@ class MainActivity : BaseActivity(), GridRecyclerAdapter.RecyclerAdapterOnClickH
     private fun setupRecyclerCardGrid() {
         val mainView = findViewById<RecyclerView>(R.id.dashboard_rv)
         mainView.setHasFixedSize(true)
-        mainView.layoutManager = GridLayoutManager(this, 2)
+        mainView.layoutManager = GridLayoutManager(this, 2) as RecyclerView.LayoutManager?
         mainView.adapter = GridRecyclerAdapter(this, DashboardFeatureList.getFeatureListOfDashboard(applicationContext))
     }
 
@@ -50,43 +55,51 @@ class MainActivity : BaseActivity(), GridRecyclerAdapter.RecyclerAdapterOnClickH
     override fun onClick(target: String) {
         val i = Intent()
 
-        if (target === applicationContext.resources.getString(R.string.feature01)) {
-            i.setClass(this@MainActivity, DiscoverMoviesActivity::class.java)
-            startActivity(i)
-        } else if (target === applicationContext.resources.getString(R.string.feature02)) {
-            i.setClass(this@MainActivity, DiscoverMoviesActivity::class.java)
-            startActivity(i)
-        } else if (target === applicationContext.resources.getString(R.string.feature03)) {
-            i.setClass(this@MainActivity, DiscoverMoviesActivity::class.java)
-            startActivity(i)
-        } else if (target === applicationContext.resources.getString(R.string.feature04)) {
-            i.setClass(this@MainActivity, TrendingMoviesActivity::class.java)
-            startActivity(i)
-        } else if (target === applicationContext.resources.getString(R.string.feature05)) {
-            showLongToast("To be implemented")
-        } else if (target === applicationContext.resources.getString(R.string.feature06)) {
-            showLongToast("To be implemented")
-        } else {
+        when {
+            target === applicationContext.resources.getString(R.string.feature01) -> {
+                i.setClass(this@MainActivity, DiscoverMoviesActivity::class.java)
+                startActivity(i)
+            }
+            target === applicationContext.resources.getString(R.string.feature02) -> {
+                i.setClass(this@MainActivity, TrendingMoviesActivity::class.java)
+                startActivity(i)
+            }
+            target === applicationContext.resources.getString(R.string.feature03) -> {
+                i.setClass(this@MainActivity, SortedMovieListActivity::class.java)
+                i.putExtra("SortBy", POPULARITY)
+                i.putExtra("minVote", 1000)
+                startActivity(i)
+            }
+            target === applicationContext.resources.getString(R.string.feature04) -> {
+                i.setClass(this@MainActivity, SortedMovieListActivity::class.java)
+                i.putExtra("SortBy", TOP_RATED)
+                i.putExtra("minVote", 1000)
+                startActivity(i)
+            }
+            target === applicationContext.resources.getString(R.string.feature05) -> {
+                i.setClass(this@MainActivity, DiscoverMoviesActivity::class.java)
+                startActivity(i)
+            }
+            target === applicationContext.resources.getString(R.string.feature06) -> {
+                showLongToast("To be implemented")
+            }
+            else -> {
+            }
         }
     }
 
     override fun onBackPressed() {
-        val drawer = findViewById<DrawerLayout>(R.id.drawer_layout)
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START)
-        } else {
-            AlertDialog.Builder(this)
-                .setTitle("Exit Confirmation")
-                .setMessage("Are you sure you want to exit?")
-                .setNegativeButton(
-                    android.R.string.no, null
-                )
-                .setPositiveButton(
-                    android.R.string.yes
+        AlertDialog.Builder(this)
+            .setTitle("Exit Confirmation")
+            .setMessage("Are you sure you want to exit?")
+            .setNegativeButton(
+                android.R.string.no, null
+            )
+            .setPositiveButton(
+                android.R.string.yes
 
-                ) { _, _ -> super.onBackPressed() }
-                .create().show()
-        }
+            ) { _, _ -> super.onBackPressed() }
+            .create().show()
     }
 
     private fun setuptabs() {
