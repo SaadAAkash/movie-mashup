@@ -1,5 +1,7 @@
-# Movie Mashup
-## The personal feed for movie buffs
+## Movie Mashup
+### The personal feed for movie buffs
+
+<img src="https://github.com/SaadAAkash/MovieMashup/blob/master/Resources/banner.jpg" height="600" width="800">
 
 [![GitHub license](https://img.shields.io/cran/l/devtools.svg)](https://github.com/me-shaon/GLWTPL/blob/master/NSFW_LICENSE) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)]()  [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/SaadAAkash/MovieMashup/graphs/commit-activity) [![Open Source Love svg1](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/) [![made-with-love](https://img.shields.io/badge/Made%20with-Love-1f425f.svg)](https://saad.ninja)
 
@@ -16,7 +18,7 @@ The whole app is developed using Kotlin in MVVM architecture, with Dagger for De
 
 ### Thought Process & MVVM Architecture Implementation 
 
-![App-using-MVVM](https://github.com/SaadAAkash/MovieMashup/blob/master/Resources/mvvm-architecture-moviemashup.jpg "MVVM in MovieMashup")
+<img src="https://github.com/SaadAAkash/MovieMashup/blob/master/Resources/mvvm-architecture-moviemashup.jpg" height="600" width="800">
 
 ### Requirement Specifications
 
