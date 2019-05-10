@@ -17,4 +17,10 @@ class MovieRepositoryImpl @Inject constructor(var movieAPI: MovieAPI) : MovieRep
             .observeOn(AndroidSchedulers.mainThread())
     }
 
+    override fun getTrending(mediaType: String, timeWindow: String): Observable<MovieResponse> {
+        return movieAPI.trending(mediaType = "movie", timeWindow = "day")
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+    }
+
 }

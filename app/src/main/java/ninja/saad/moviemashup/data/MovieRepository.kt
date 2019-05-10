@@ -7,5 +7,6 @@ import java.util.*
 interface MovieRepository {
 
     fun getMovies(page: Int, date: Date): Observable<MovieResponse>
+    fun getTrending(mediaType: String, timeWindow: String): Observable<MovieResponse>
 
 }

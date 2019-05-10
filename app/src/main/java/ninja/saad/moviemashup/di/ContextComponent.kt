@@ -2,6 +2,7 @@ package ninja.saad.moviemashup.di
 
 import dagger.Subcomponent
 import ninja.saad.moviemashup.features.discover.DiscoverMoviesActivity
+import ninja.saad.moviemashup.features.trending.TrendingMoviesActivity
 
 
 @ContextScope
@@ -9,5 +10,6 @@ import ninja.saad.moviemashup.features.discover.DiscoverMoviesActivity
 interface ContextComponent {
 
     fun inject(mainActivity: DiscoverMoviesActivity)
+    fun injectTrendingActivity(trendingMoviesActivity: TrendingMoviesActivity)
 
 }
